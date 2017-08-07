@@ -1,0 +1,20 @@
+{
+  "name": "jl_dot_com",
+  "version": "1.0.0",
+  "description": "Portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeffrey Lowy <jeffreylowy@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffreylowy/jl.git"
+  },
+  "dependencies": {
+    "compression": "^1.7.1",
+    "express": "^4.16.2",
+    "marko": "^4.6.0"
+  }
+}

@@ -1,0 +1,124 @@
+$ var title = require("./title");
+$ var message = 'Welcome to <b>Marko</b>!';
+<macro greeting(name,color)>
+  <div class="greeting" style={backgroundColor: color}>
+    Hello ${name}!
+  </div>
+</macro>
+
+<div>
+  <h1>${title};</h1>
+</div>
+
+<pre>
+  By default, pre tags have
+  their whitespace preserved
+</pre>
+
+<textarea>
+  Same for text areas!
+</textarea>
+
+$ //Comment
+
+<div>
+  <p>HTML $!{message}</p>
+</div>
+
+<div>
+  <p>Escaped HTML: ${message}</p>
+</div>
+
+<!-- Macros can be invoked using the <invoke> tag -->
+<greeting name="World" color="green" />
+<!-- Or, macros can be invoked as a function call in an expression -->
+<greeting( 'Frank', 'yellow')/>
+
+<macro section(title, url)>
+  <div class="section">
+    <h2>
+      <a href=url>
+        ${title}
+      </a>
+    </h2>
+    <p>
+      <macro-body/>
+    </p>
+  </div>
+</macro>
+
+<section title="Neil Armstrong" url="http://en.wikipedia.org/wiki/Neil_Armstrong">
+  American astronaut and the first person to walk on the Moon
+</section>
+<section title="Ernest Hemingway" url="http://en.wikipedia.org/wiki/Hemingway">
+  American author and journalist.
+</section>
+
+$ var person = { firstName: 'John', lastName: 'Doe', age: 20 };
+
+<ul>
+  <li for(name,value in person)>
+    <b>${name}</b>: ${value}
+  </li>
+</ul>
+
+$ var colors = ['red', 'green', 'blue'];
+
+<ul>
+  <li for(color in colors | status-var=loop)>
+    ${loop.getIndex()+1}) ${color}
+    <if(loop.isFirst())>- FIRST</if>
+      <if(loop.isLast())>- LAST</if>
+  </li>
+</ul>
+
+$ var colors = ['red', 'green', 'blue'];
+
+<ul>
+  <li for(i,color in colors)>
+    ${i+1}) ${color}
+  </li>
+</ul>
+
+static function colorsGenerator(callback) {
+  console.log(callback.toString());
+  callback('pink');
+  callback('green');
+  callback('blue');
+  }
+
+<ul>
+  <li for(color in colorsGenerator)>
+    ${color}
+  </li>
+</ul>
+
+$ var age = 20;
+
+<if(age < 50)>
+  <div>
+  You are less than 50 years old
+  </div>
+</if>
+<else if(age===5 0)>
+  <div>
+  You are 50 years old
+  </div>
+</else>
+<else>
+  <div>
+  You are over 50
+  </div>
+</else>
+
+<!-- As attribute: -->
+<div if(age < 50)>
+  You are less than 50 years old!
+</div>
+
+<!-- As tag: -->
+<if(age < 50)>
+  <div>
+    You are less than 50 years old!
+  </div>
+</if>
