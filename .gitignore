@@ -59,3 +59,6 @@ typings/
 
 # Marko generated files
 *.marko.js
+
+# Project specific
+Design Files/

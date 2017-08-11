@@ -1,0 +1,30 @@
+body {
+	background: black;
+	color: white;
+}
+
+nav {
+	width: 100%;
+}
+
+a, a:hover, a:visited {
+	color:white;
+	text-decoration: none;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+div.container a.nav-left {
+	float: left;
+}
+
+div.container div.nav-right {
+	float: right;
+}
+
+div.container div.buttons a {
+	margin-right: 10px;
+}
