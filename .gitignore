@@ -62,3 +62,4 @@ typings/
 
 # Project specific
 Design Files/
+*.woff2
