@@ -20,4 +20,8 @@ app.use(markoExpress());
 
 app.use('/', router);
 
-app.listen(3000);
+app.listen(3000, function(){
+	// @todo - Make this display only when in dev mode.
+	
+	console.log("URL:", "http://localhost:3000");
+});
