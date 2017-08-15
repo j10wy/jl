@@ -6,6 +6,7 @@ const markoExpress = require('marko/express');
 const router = require('./routes');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Enable gzip compression for all HTTP responses
 app.use(compression());
@@ -20,8 +21,7 @@ app.use(markoExpress());
 
 app.use('/', router);
 
-app.listen(3000, function(){
-	// @todo - Make this display only when in dev mode.
+app.listen(PORT, function () {
 	
-	console.log("URL:", "http://localhost:3000");
+	console.log("URL:", "http://localhost:" + PORT);
 });
