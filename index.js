@@ -1,3 +1,4 @@
+require('dotenv').config();
 require('marko/node-require'); // Allow Node.js to require and load `.marko` files
 
 const express = require('express');
