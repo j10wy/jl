@@ -22,6 +22,5 @@ app.use(markoExpress());
 app.use('/', router);
 
 app.listen(PORT, function () {
-	
 	console.log("URL:", "http://localhost:" + PORT);
 });
