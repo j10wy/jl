@@ -6,7 +6,7 @@ const markoExpress = require('marko/express');
 const router = require('./routes');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // Enable gzip compression for all HTTP responses
 app.use(compression());
