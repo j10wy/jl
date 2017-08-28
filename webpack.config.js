@@ -1,8 +1,11 @@
+// Require the path and ExtractTextPlugin modules. 
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+// Create a new object from ExtractTextPlugin. Set the filename to style.css and save in the public/css directory. The path is based on the output directory in the object referenced by module.exports
+
 const extractLess = new ExtractTextPlugin({
-	//filename: "../css/[name].[contenthash].css",
+	// Here is a way to name your files with a hash - filename: "../css/[name].[contenthash].css"
 	filename: "../css/style2.css",
 	disable: process.env.NODE_ENV === "development"
 });
