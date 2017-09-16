@@ -33,7 +33,10 @@ body nav:after {
 
 body>div.container {
 	margin: 50px auto 0 auto;
-	height: 80vh;
+}
+
+nav>div.container img.logo {
+	height:25px;
 }
 
 a,
