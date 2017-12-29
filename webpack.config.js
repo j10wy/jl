@@ -6,7 +6,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractLess = new ExtractTextPlugin({
 	// Here is a way to name your files with a hash - filename: "../css/[name].[contenthash].css"
-	filename: "../css/style2.css",
+	filename: "css/style.css",
 	disable: process.env.NODE_ENV === "development"
 });
 
@@ -15,8 +15,8 @@ module.exports = {
 		index: './src/index.js'
 	},
 	output: {
-		filename: '[name].bundle.js',
-		path: path.resolve(__dirname, 'public/js')
+		filename: 'js/[name].bundle.js',
+		path: path.resolve(__dirname, 'public/')
 	},
 	module: {
 		rules: [{
@@ -36,6 +36,14 @@ module.exports = {
 				// use style-loader in development
 				fallback: "style-loader"
 			})
+		}, {
+			test: /\.(ttf|woff|woff2)$/,
+			loader: "file-loader",
+			options: {
+				publicPath:"../",
+				outputPath: 'fonts/',
+				name: '[name].[ext]'
+			}
 		}]
 	},
 	plugins: [
