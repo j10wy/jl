@@ -60,13 +60,17 @@ nav div.container div.buttons a {
 }
 section div.container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 40px 40px 40px;
 }
 section div.container div.item {
-  background: red;
+  background: #FF1461;
   margin: 5px;
-  height: 250px;
+}
+section div.container div.item-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  background: #2D68EE;
 }
 footer {
   display: block;

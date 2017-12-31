@@ -15,6 +15,7 @@
     "url": "https://github.com/jeffreylowy/jl.git"
   },
   "dependencies": {
+    "animejs": "^2.2.0",
     "compression": "^1.7.1",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",

@@ -2,12 +2,14 @@
 	font-family: IBMPlexMonoRegular;
 	src: url('../fonts/IBMPlexMono-Light.woff2');
 }
+
 @font-face {
 	font-family: IBMPlexMonoSemiBold;
 	src: url('../fonts/IBMPlexMono-Regular.woff2');
 }
 
-html, body {
+html,
+body {
 	box-sizing: border-box;
 }
 
@@ -22,7 +24,7 @@ body nav {
 	width: 100%;
 	background-color: #2D68EE;
 	background-image: linear-gradient(60deg, #1259fe 0%, #003098);
-	padding: 25px 0;	
+	padding: 25px 0;
 }
 
 body nav:after {
@@ -36,7 +38,7 @@ body>div.container {
 }
 
 nav>div.container img.logo {
-	height:25px;
+	height: 25px;
 }
 
 a,
@@ -69,14 +71,20 @@ nav div.container div.buttons a {
 
 section div.container {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: auto;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 40px 40px 40px;
 }
 
 section div.container div.item {
-	background: red;
+	background: #FF1461;
 	margin: 5px;
-	height: 250px;
+}
+
+section div.container div.item-1 {
+	// ~ to use an escaped value
+	grid-column: ~"1 / 2";
+	grid-row: ~"1 / -1";
+	background: #2D68EE;
 }
 
 footer {
@@ -86,10 +94,10 @@ footer {
 
 footer div.container:before {
 	display: block;
-	content:"";
-	margin-bottom:12px;
+	content: "";
+	margin-bottom: 12px;
 	height: 5px;
-	width:100%;
+	width: 100%;
 	background-color: #2D68EE;
 	background-image: linear-gradient(60deg, #003098 0%, #1259fe);
 }
@@ -99,5 +107,5 @@ footer a.social-link {
 }
 
 footer img.social-icon {
-	height:44px;
+	height: 44px;
 }
