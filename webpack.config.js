@@ -20,6 +20,10 @@ module.exports = {
 	},
 	module: {
 		rules: [{
+			test: /\.js$/,
+			exclude: /node_modules/,
+			loader: "babel-loader"
+		}, {
 			test: /\.less$/,
 			use: extractLess.extract({
 				use: [{
@@ -40,7 +44,7 @@ module.exports = {
 			test: /\.(ttf|woff|woff2)$/,
 			loader: "file-loader",
 			options: {
-				publicPath:"../",
+				publicPath: "../",
 				outputPath: 'fonts/',
 				name: '[name].[ext]'
 			}
