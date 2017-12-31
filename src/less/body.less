@@ -71,13 +71,15 @@ nav div.container div.buttons a {
 
 section div.container {
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
+	// Minmax to auto-fit the grid-items
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	grid-template-rows: 40px 40px 40px;
+	grid-gap: 5px;
 }
 
 section div.container div.item {
+	
 	background: #FF1461;
-	margin: 5px;
 }
 
 section div.container div.item-1 {
