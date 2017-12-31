@@ -1,7 +1,12 @@
 import './less/main.less';
+import anime from 'animejs';
 
-const greet = (greeting)=>{
-	console.log(greeting);
-};
+let item1 = anime({
+	targets: '.item-1',
+	left:"250px"
+  });
 
-greet(`hola!`);
+  let item2 = anime({
+	targets: '.item-2',
+	left: "0px"
+  });  

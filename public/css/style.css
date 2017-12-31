@@ -65,6 +65,7 @@ section div.container {
   grid-gap: 5px;
 }
 section div.container div.item {
+  position: relative;
   background: #FF1461;
 }
 section div.container div.item-1 {
