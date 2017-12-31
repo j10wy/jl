@@ -62,6 +62,5 @@ typings/
 
 # Project specific
 Design Files/
-src/fonts/
 public/*
 !public/img
