@@ -1,6 +1,7 @@
 // Require the path and ExtractTextPlugin modules. 
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // Create a new object from ExtractTextPlugin. Set the filename to style.css and save in the public/css directory. The path is based on the output directory in the object referenced by module.exports
 
@@ -9,6 +10,12 @@ const extractLess = new ExtractTextPlugin({
 	filename: "css/style.css",
 	disable: process.env.NODE_ENV === "development"
 });
+
+const uglifyJs = new UglifyJsPlugin({
+	test: /\.js($|\?)/i,
+	sourceMap: true,
+	extractComments: true
+  })
 
 module.exports = {
 	entry: {
@@ -51,6 +58,7 @@ module.exports = {
 		}]
 	},
 	plugins: [
-		extractLess
+		extractLess,
+		uglifyJs
 	]
 };
