@@ -1,0 +1,22 @@
+section div.container {
+	display: grid;
+	position: relative;
+	// Minmax to auto-fit the grid-items
+	grid-template-columns: repeat(5, minmax(50px, 20%));
+	grid-template-rows: repeat(2, 200px);
+	grid-gap: 5px;
+}
+
+section div.container div.item {
+	position: relative;
+	background:#FF1461;
+}
+
+
+// This is the blue box that sites to the side.
+// section div.container div.item-1 {
+// 	// ~ to use an escaped value
+// 	grid-column: ~"1 / 2";
+// 	grid-row: ~"1 / -1";
+// 	background: #2D68EE;
+// }

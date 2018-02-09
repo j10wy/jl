@@ -1,13 +1,3 @@
-@font-face {
-	font-family: IBMPlexMonoRegular;
-	src: url('../fonts/IBMPlexMono-Light.woff2');
-}
-
-@font-face {
-	font-family: IBMPlexMonoSemiBold;
-	src: url('../fonts/IBMPlexMono-Regular.woff2');
-}
-
 html,
 body {
 	box-sizing: border-box;
@@ -19,35 +9,6 @@ body {
 	font-family: IBMPlexMonoRegular;
 	margin: 0;
 }
-
-body nav {
-	width: 100%;
-	background-color: #2D68EE;
-	background-image: linear-gradient(60deg, #1259fe 0%, #003098);
-	padding: 25px 0;
-}
-
-body nav:after {
-	display: table;
-	content: "";
-	clear: both;
-}
-
-body>div.container {
-	margin: 50px auto 0 auto;
-}
-
-nav>div.container img.logo {
-	height: 25px;
-}
-
-a,
-a:hover,
-a:visited {
-	color: white;
-	text-decoration: none;
-}
-
 .container {
 	max-width: 960px;
 	margin: 0 auto;
@@ -55,60 +16,4 @@ a:visited {
 
 .container h1 {
 	font-family: IBMPlexMonoSemiBold;
-}
-
-nav div.container a.nav-left {
-	float: left;
-}
-
-nav div.container div.nav-right {
-	float: right;
-}
-
-nav div.container div.buttons a {
-	margin-right: 10px;
-}
-
-section div.container {
-	display: grid;
-	position: relative;
-	// Minmax to auto-fit the grid-items
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-	grid-template-rows: 40px 40px 40px;
-	grid-gap: 5px;
-}
-
-section div.container div.item {
-	position: relative;
-	background: #FF1461;
-}
-
-section div.container div.item-1 {
-	// ~ to use an escaped value
-	grid-column: ~"1 / 2";
-	grid-row: ~"1 / -1";
-	background: #2D68EE;
-}
-
-footer {
-	display: block;
-	padding: 1rem;
-}
-
-footer div.container:before {
-	display: block;
-	content: "";
-	margin-bottom: 12px;
-	height: 5px;
-	width: 100%;
-	background-color: #2D68EE;
-	background-image: linear-gradient(60deg, #003098 0%, #1259fe);
-}
-
-footer a.social-link {
-	margin-right: 12px;
-}
-
-footer img.social-icon {
-	height: 44px;
 }

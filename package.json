@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "start": "node ./index.js",
-    "test": "webpack && nodemon -e ./index"
+    "test": "webpack && nodemon -e ./index",
+    "less": "node node_modules/less-watch-compile -f src/less/main.less -o public/css"
   },
   "author": "Jeffrey Lowy <jeffreylowy@gmail.com>",
   "license": "MIT",
@@ -35,6 +36,7 @@
     "file-loader": "^1.1.6",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "less-watch-compile": "^1.1.8",
     "style-loader": "^0.19.0",
     "uglifyjs-webpack-plugin": "^1.1.5",
     "webpack": "^3.9.1"
