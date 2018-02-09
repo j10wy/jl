@@ -2,7 +2,7 @@ require('dotenv').config();
 require('marko/node-require'); // Allow Node.js to require and load `.marko` files
 
 const express = require('express');
-const compression = require('compression')
+const compression = require('compression');
 const markoExpress = require('marko/express');
 const router = require('./routes');
 
@@ -23,5 +23,5 @@ app.use(markoExpress());
 app.use('/', router);
 
 app.listen(PORT, function () {
-	console.log("URL:", "http://localhost:" + PORT);
+	console.log('URL:', 'http://localhost:' + PORT);
 });
