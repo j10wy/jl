@@ -11,7 +11,8 @@
 	<div class="container">
 		<h1>LIRI (Language Interpretation and Recognition Interface)</h1>
 
-		<h5>LIRI is a command line Node application that takes in parameters (via command line arguments or file input) to display tweets, songs from Spotify, and movie information from OMDB.</h5>
+		<h5>LIRI is a command line Node application that takes in parameters (via command line arguments or file input) to display
+			tweets, songs from Spotify, and movie information from OMDB.</h5>
 
 		<a class="git-badge" href="https://www.npmjs.com/package/liri-cli">
 			<img src="https://badge.fury.io/js/liri-cli.svg" alt="Liri on NPM">
@@ -28,7 +29,7 @@
 		<h3>Table of Contents</h3>
 		<ul id="table-of-contents" type="square">
 			<li>
-				<a href="#asciicast-162270">Demo</a>
+				<a href="#demo">Demo</a>
 			</li>
 			<li>
 				<a href="#liri-commands">Liri Commands</a>
@@ -42,20 +43,21 @@
 			<li>
 				<a href="#install-and-run-via-npm">Install and run via NPM</a>
 			</li>
-
 		</ul>
 
-		<hr>
-		<h3>Demo</h3>
-		<script src="https://asciinema.org/a/162270.js" id="asciicast-162270" async></script>
+		<hr class="gradient">
+		<h3 id="demo">Demo</h3>
+		<div class="player">
+			<script src="https://asciinema.org/a/162270.js" id="asciicast-162270" async></script>
+		</div>
 
-		<hr>
+		<hr class="gradient">
 
 		<h3 id="liri-commands">LIRI Commands</h3>
 		<p>
 			<code>node ./liri [movie, spotify, tweets, do] &lt;value&gt; (--say)</code>
 		</p>
-		<table>
+		<table class="liri">
 			<thead>
 				<tr>
 					<th>
@@ -77,19 +79,19 @@
 					<td>movie</td>
 					<td>"movie title"</td>
 					<td>–say</td>
-					<td>node liri "Blade Runner 2049" --say</td>
+					<td>node liri 'Blade Runner 2049' --say</td>
 				</tr>
 				<tr>
 					<td>spotify</td>
 					<td>"song title"</td>
 					<td>-</td>
-					<td>node liri "Thriller"</td>
+					<td>node liri 'Thriller'</td>
 				</tr>
 				<tr>
 					<td>tweets</td>
 					<td>twitter handle</td>
 					<td>-</td>
-					<td>node liri "jeffreylowy"</td>
+					<td>node liri 'jeffreylowy'</td>
 				</tr>
 				<tr>
 					<td>do-what-it-says</td>
@@ -108,7 +110,7 @@
 				<code>--say</code> currently does not work when run via npm script.</em>
 		</p>
 
-		<hr>
+		<hr class="gradient">
 
 		<h3 id="api-keys">API Keys</h3>
 		<p>Rather than include a
@@ -122,29 +124,34 @@
 			<a href="https://www.npmjs.com/package/dotenv">dotenv</a> package.
 		</p>
 
-		<hr>
+		<hr class="gradient">
 
 		<h3 id="make-liri-speak">Make LIRI speak</h3>
-		<p>If Node is running on macOS/Darwin, you can make LIRI read movie plot information by passing the `--say` flag after the
-			movie's title. This only works when the full command is entered.</p>
+		<p>If
+			<code>Node</code> is running on macOS/Darwin, you can make LIRI read movie plot information by passing the `--say` flag after
+			the movie's title. This only works when the full command is entered.</p>
 
-		<p>Example: `node ./liri movie "Blade Runner 2049" --say`</p>
+		<p>Example:
+			<code>node ./liri movie 'Blade Runner 2049' --say</code>
+		</p>
 
-		<hr>
+		<hr class="gradient">
 
 		<h3 id="install-and-run-via-npm">Install and run via NPM</h3>
 
-		<p>This project was uploaded to NPM under the package name `liri-cli`. Though I hope to get there, the package is not yet
-			ready to be installed globally.</p>
+		<p>This project was uploaded to NPM under the package name
+			<code>liri-cli</code>. Though I hope to get there, the package is not yet ready to be installed globally.</p>
 
-		<p>Install: `npm i liri-cli`</p>
+		<p>Install:
+			<code>npm i liri-cli</code>
+		</p>
 
-		<p>`--say` currently does not work when run via npm script.</p>
+		<p>
+			<code>--say</code> currently does not work when run via npm script.</p>
 
-		<app-footer/>
-		<script src="assets/js/index.bundle.js"></script>
 	</div>
-
+	<app-footer/>
+	<script src="assets/js/index.bundle.js"></script>
 </body>
 
 </html>
