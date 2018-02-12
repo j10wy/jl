@@ -1,0 +1,150 @@
+<html>
+
+<head>
+	<title>Jeffrey Lowy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+	<app-nav/>
+	<div class="container">
+		<h1>LIRI (Language Interpretation and Recognition Interface)</h1>
+
+		<h5>LIRI is a command line Node application that takes in parameters (via command line arguments or file input) to display tweets, songs from Spotify, and movie information from OMDB.</h5>
+
+		<a class="git-badge" href="https://www.npmjs.com/package/liri-cli">
+			<img src="https://badge.fury.io/js/liri-cli.svg" alt="Liri on NPM">
+		</a>
+
+		<a class="git-badge" href="https://www.npmjs.com/package/liri-cli">
+			<img src="https://img.shields.io/npm/dt/liri-cli.svg" alt="Liri on NPM">
+		</a>
+
+		<a class="git-badge" href="https://github.com/jeffreylowy/liri-node-app">
+			<img src="https://img.shields.io/github/last-commit/jeffreylowy/liri-node-app.svg" alt="Liri on NPM">
+		</a>
+
+		<h3>Table of Contents</h3>
+		<ul id="table-of-contents" type="square">
+			<li>
+				<a href="#asciicast-162270">Demo</a>
+			</li>
+			<li>
+				<a href="#liri-commands">Liri Commands</a>
+			</li>
+			<li>
+				<a href="#api-keys">API Keys</a>
+			</li>
+			<li>
+				<a href="#make-liri-speak">Make LIRI speak</a>
+			</li>
+			<li>
+				<a href="#install-and-run-via-npm">Install and run via NPM</a>
+			</li>
+
+		</ul>
+
+		<hr>
+		<h3>Demo</h3>
+		<script src="https://asciinema.org/a/162270.js" id="asciicast-162270" async></script>
+
+		<hr>
+
+		<h3 id="liri-commands">LIRI Commands</h3>
+		<p>
+			<code>node ./liri [movie, spotify, tweets, do] &lt;value&gt; (--say)</code>
+		</p>
+		<table>
+			<thead>
+				<tr>
+					<th>
+						<strong>Command</strong>
+					</th>
+					<th>
+						<strong>Value</strong>
+					</th>
+					<th>
+						<strong>Options</strong>
+					</th>
+					<th>
+						<strong>Example</strong>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>movie</td>
+					<td>"movie title"</td>
+					<td>–say</td>
+					<td>node liri "Blade Runner 2049" --say</td>
+				</tr>
+				<tr>
+					<td>spotify</td>
+					<td>"song title"</td>
+					<td>-</td>
+					<td>node liri "Thriller"</td>
+				</tr>
+				<tr>
+					<td>tweets</td>
+					<td>twitter handle</td>
+					<td>-</td>
+					<td>node liri "jeffreylowy"</td>
+				</tr>
+				<tr>
+					<td>do-what-it-says</td>
+					<td>-</td>
+					<td>-</td>
+					<td>node liri do-what-it-says</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>You can also run via npm scripts.</p>
+		<p>
+			<code>npm run [movie, spotify, tweets, do] &lt;value&gt;</code>
+		</p>
+		<p>
+			<em>
+				<code>--say</code> currently does not work when run via npm script.</em>
+		</p>
+
+		<hr>
+
+		<h3 id="api-keys">API Keys</h3>
+		<p>Rather than include a
+			<code>keys.js</code> file, I used the
+			<a href="https://www.npmjs.com/package/dotenv">dotenv</a> package to create environment variables. The
+			<code>.env</code> file is the first file required in
+			<code>./liri.js</code>, which stores environment-specific variables in the form of
+			<code>NAME=VALUE</code>.</p>
+
+		<p>For more information, visit the NPM page for the
+			<a href="https://www.npmjs.com/package/dotenv">dotenv</a> package.
+		</p>
+
+		<hr>
+
+		<h3 id="make-liri-speak">Make LIRI speak</h3>
+		<p>If Node is running on macOS/Darwin, you can make LIRI read movie plot information by passing the `--say` flag after the
+			movie's title. This only works when the full command is entered.</p>
+
+		<p>Example: `node ./liri movie "Blade Runner 2049" --say`</p>
+
+		<hr>
+
+		<h3 id="install-and-run-via-npm">Install and run via NPM</h3>
+
+		<p>This project was uploaded to NPM under the package name `liri-cli`. Though I hope to get there, the package is not yet
+			ready to be installed globally.</p>
+
+		<p>Install: `npm i liri-cli`</p>
+
+		<p>`--say` currently does not work when run via npm script.</p>
+
+		<app-footer/>
+		<script src="assets/js/index.bundle.js"></script>
+	</div>
+
+</body>
+
+</html>
