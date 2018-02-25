@@ -1,5 +1,5 @@
 h1 {
-	background: -webkit-linear-gradient(60deg, #1259fe 0%, #003098);
+	background: -webkit-linear-gradient(@gradient_angle, @nav_left 0%, @nav_right 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -12,15 +12,22 @@ h3 {
 
 h5 {
 	line-height: 1.6em;
+	font-size:1.1em;
+	margin: 22px 0;
+}
+
+ul#table-of-contents li {
+	line-height: 1.4em;
 }
 
 p {
 	line-height: 1.4em;
+	font-size:0.9em;
 }
 
 code {
-	background: #232323;
+	background: @code_bg;
 	padding: 6px;
 	border-radius: 3px;
-	color: lime;
+	color: @color7;
 }
