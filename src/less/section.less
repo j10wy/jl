@@ -7,8 +7,17 @@ section div.container {
 
 section div.container div.item {
 	position: relative;
-	background: @pink;
+	background: @coolor_black1;
 	height: 200px;
+	margin-bottom: 5px;
+	border: 1px solid @coolor_blue;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	@media screen and (max-width:396px) {
+		height: 300px;
+	}
 }
 
 div.player {
