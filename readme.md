@@ -1,4 +1,4 @@
-# Personal Site
+# [www.jefflowy.com](https://www.jefflowy.com)
 
 ### Environment Settings
 ```
@@ -20,24 +20,44 @@ git fetch && git pull origin master
 pm2 restart index.js
 ```
 
-### SSL Cert
-Add cron and nginx info from [here](https://code.lengstorf.com/deploy-nodejs-ssl-digitalocean/)
-- service nginx restart
-- pm2 show index
-- pm2 start index.js
-- curl http://localhost:3000
-- sudo crontab -e
-- ./certbot-auto certonly --standalone
-- dig +short jeffreylowy.com
+### [SSL Cert](https://code.lengstorf.com/deploy-nodejs-ssl-digitalocean/)
 
-### SSL Renewal
+#### Auto certificate renewal
+
+```bash
+# View the crontab (CRON TABle) file to view the scheduled cron entries.
+sudo crontab -e
+
+# You should see lines similar to the following:
+00 1 * * 1 ../letsencrypt/certbot-auto renew >> /var/log/letsencrypt-renewal.log
+30 1 * * 1 ../systemctl reload nginx
+
+# Test if the server is running locally, where XXXX is the port the Node server is running on.
+curl http://localhost:XXXX
+
+# Use dig (domain information groper) to query DNS information.
+dig +short jefflowy.com
+```
 
 #### Manual certificate renewal
 
-There are basically two solutions available:
+``` bash
+# From the app directory, stop the Node server
+pm2 stop index.js
 
-1. You can temporarily stop and restart nginx when doing certificate renewals. There is a way to get Certbot to remember to do this for you with hooks, so that certbot renew will still work and will temporarily stop nginx for the duration of the renewal authentication. In this case, you can keep using --standalone because port 80 will become free temporarily during the renewal.
+# Temporarily stop and restart nginx
+service nginx stop
 
-2. You can change the authentication method to something other than --standalone (for example --nginx as of 0.21 should be fine, or --webroot if your configuration serves static files rather than proxying requests to a web app… which it looks like would be a problem for you in this configuration unless you configured an exception to the proxy_pass for the /.well-known/acme-challenge URL path).
+# First, CD into the letsencrypt directory (ex: cd ../letsencrypt)
+# Then run the following command:
+./certbot-auto certonly --standalone
 
+# Navigate back to the app folder. Restart nginx and the Node app
+service nginx restart
+pm2 {restart|start} index.js
 
+# View the status of pm2
+pm2 show index
+```
+
+_As of certbot v0.21, you can change the authentication method to something other than --standalone (for example --nginx)._
