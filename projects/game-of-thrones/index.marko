@@ -1,13 +1,8 @@
-<html>
-
-<head>
-	<title>Jeffrey Lowy</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../assets/css/style.css">
-</head>
-
-<body>
-	<app-nav/>
+<include( "../../templates/app-shell.marko")>
+	<@title>
+		${input.title}
+	</@title>
+	<@body>
 	<div class="container">
 		<h1>Hangman: Game of Thrones Edition</h1>
 
@@ -23,8 +18,5 @@
 		<hr class="gradient">
 
 	</div>
-	<app-footer/>
-	<script src="assets/js/index.bundle.js"></script>
-</body>
-
-</html>
+</@body>
+</include>

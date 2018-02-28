@@ -1,33 +1,25 @@
-<html>
+<include( "../../templates/app-shell.marko")>
+	<@title>
+		${input.title}
+	</@title>
+	<@body>
+		<div class="container">
+			<h1>Guardians of the Galaxy RPG</h1>
 
-<head>
-	<title>Jeffrey Lowy</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../assets/css/style.css">
-</head>
+			<h5>Simple RPG game with a Guardians of the Galaxy theme.</h5>
 
-<body>
-	<app-nav/>
-	<div class="container">
-		<h1>Guardians of the Galaxy RPG</h1>
+			<h3>Table of Contents</h3>
+			<ul id="table-of-contents" type="square">
+				<li>
+					<a href="#">Choosing a character</a>
+				</li>
+				<li>
+					<a href="#">Animating Characters</a>
+				</li>
+			</ul>
 
-		<h5>Simple RPG game with a Guardians of the Galaxy theme.</h5>
+			<hr class="gradient">
 
-		<h3>Table of Contents</h3>
-		<ul id="table-of-contents" type="square">
-			<li>
-				<a href="#">Choosing a character</a>
-			</li>
-			<li>
-				<a href="#">Animating Characters</a>
-			</li>
-		</ul>
-
-		<hr class="gradient">
-
-	</div>
-	<app-footer/>
-	<script src="assets/js/index.bundle.js"></script>
-</body>
-
-</html>
+		</div>
+	</@body>
+	</include>
