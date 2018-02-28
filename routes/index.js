@@ -1,17 +1,10 @@
 const router = require('express').Router();
-const template = require('../templates/main');
-const wrapper = require('../templates/wrapper');
+const template = require('../templates/home');
 const projects = require('../projects');
 
 router.get('/', function (req, res) {
 	res.marko(template, {
 		title: 'Jeff Lowy'
-	});
-});
-
-router.get('/about', function (req, res) {
-	res.marko(wrapper, {
-		title: 'About Me'
 	});
 });
 
