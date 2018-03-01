@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const template = require('../templates/home');
-const about = require('../templates/about');
+const template = require('../pages/home');
+const about = require('../pages/about');
 const projects = require('../projects');
 
 router.get('/', function (req, res) {

@@ -1,4 +1,4 @@
-<include( "../../templates/app-shell.marko")>
+<include( "../../pages/app-shell.marko")>
 	<@title>
 		${input.title}
 	</@title>
@@ -6,8 +6,7 @@
 		<div class="container">
 			<h1>LIRI (Language Interpretation and Recognition Interface)</h1>
 
-			<h5>LIRI is a command line Node application that takes in parameters (via command line arguments or file input) to display
-				tweets, songs from Spotify, and movie information from OMDB.</h5>
+			<h5>LIRI is a command line Node application that takes in parameters (via command line arguments or file input) to display tweets, songs from Spotify, and movie information from OMDB.</h5>
 
 			<a class="button" href="https://github.com/jeffreylowy/liri-node-app">View on Github</a>
 
@@ -125,8 +124,7 @@
 
 			<h3 id="make-liri-speak">Make LIRI speak</h3>
 			<p>If
-				<code>Node</code> is running on macOS/Darwin, you can make LIRI read movie plot information by passing the `--say` flag after
-				the movie's title. This only works when the full command is entered.</p>
+				<code>Node</code> is running on macOS/Darwin, you can make LIRI read movie plot information by passing the `--say` flag after the movie's title. This only works when the full command is entered.</p>
 
 			<p>Example:
 				<code>node ./liri movie 'Blade Runner 2049' --say</code>
