@@ -1,0 +1,15 @@
+<include( "./app-shell.marko")>
+	<@title>
+		${input.title}
+	</@title>
+	<@body>
+		<div class="container contact">
+			<form>
+				<input required type="text" name="name" id="name" placeholder="Your name" />
+				<input required type="email" name="email" id="email" placeholder="Your email address" />
+				<textarea required name="message" id="message" cols="30" rows="5" placeholder="Your message"></textarea>
+				<input type="submit" id="form-submit" value="SEND" />
+			</form>
+		</div>
+	</@body>
+</include>

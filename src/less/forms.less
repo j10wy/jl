@@ -1,0 +1,27 @@
+input, textarea {
+	display: block;
+	font-family: IBMPlexMonoRegular;
+	font-size: 16px;
+	margin-bottom:12px;
+	border: 1px solid @nav_left;
+	width: 100%;
+	padding:12px;
+	background:transparent;
+	color:@coolor_white;
+	transition: all 0.2s ease-in;
+}
+
+input[type='submit'] {
+	max-width: 460px;
+	cursor: pointer;
+}
+
+input[type='submit']:hover {
+	background: @teal;
+	color:@coolor_black2;
+	border:1px solid @coolor_black2;
+}
+
+input:invalid {
+	border: 1px dashed @pink;
+  }
