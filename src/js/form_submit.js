@@ -1,32 +1,33 @@
 var formSubmitButton = document.getElementById("form-submit");
 
 formSubmitButton.addEventListener("click", (event) => {
-	// submitForm()
-	// 	.then(data => console.log(data)) // JSON from `response.json()` call
-	// 	.catch(error => console.error(error))
+
 	event.preventDefault();
-	console.log(event);
+	let data = {
+		name: document.getElementById("name").value,
+		email: document.getElementById("email").value,
+		message: document.getElementById("message").value
+	};
+	
+	submitForm(data)
+		.then(response => console.log(response))
+		.catch(error => console.error(error));
+
 });
 
-function submitForm() {
-	let data = {
-		name: document.getElementById("name"),
-		email: document.getElementById("email"),
-		message: document.getElementById("message")
-	};
+function submitForm(data) {
+	console.log(data);
 	// Default options are marked with *
-	return fetch('http://www.zapier.com', {
+	return fetch('https://hooks.zapier.com/hooks/catch/702577/koyv66/', {
 			body: JSON.stringify(data), // must match 'Content-Type' header
 			cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-			credentials: 'same-origin', // include, *omit
 			headers: {
-				'user-agent': 'Mozilla/4.0 MDN Example',
 				'content-type': 'application/json'
 			},
-			method: 'POST', // *GET, PUT, DELETE, etc.
+			method: 'POST',
 			mode: 'cors', // no-cors, *same-origin
-			redirect: 'follow', // *manual, error
-			referrer: 'no-referrer', // *client
+			redirect: 'follow', 
+			referrer: 'no-referrer'
 		})
 		.then(response => response.json()) // parses response to JSON
 }
