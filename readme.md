@@ -1,6 +1,7 @@
 # [www.jefflowy.com](https://www.jefflowy.com)
 
 ### Environment Settings
+
 ```
 PORT=XXXX
 NODE_ENV=PRODUCTION
@@ -26,7 +27,7 @@ pm2 restart index.js
 
 ```bash
 # Let’s Encrypt has an one-step command to renew certificates. This command checks if the certificate is near its expiration date and, when necessary, it generates an updated certificate that’s good for another 90 days.
-./letsencrypt/certbot-auto renew
+./certbot-auto renew
 
 # View the crontab (CRON TABle) file to view the scheduled cron entries.
 sudo crontab -e
@@ -48,23 +49,23 @@ dig +short jefflowy.com
 
 #### Manual certificate renewal
 
-``` bash
+```bash
 # From the app directory, stop the Node server
 pm2 stop index.js
 
 # Temporarily stop and restart nginx
-service nginx stop
+sudo service nginx stop
 
-# First, CD into the letsencrypt directory (ex: cd ../letsencrypt)
+# First, CD into the letsencrypt directory
 # Then run the following command:
-./certbot-auto certonly --standalone
+./certbot-auto renew
 
 # Navigate back to the app folder. Restart nginx and the Node app
-service nginx restart
-pm2 {restart|start} index.js
+service nginx start
+pm2 [restart|start] index.js
 
 # View the status of pm2
 pm2 show index
 ```
 
-_As of certbot v0.21, you can change the authentication method to something other than --standalone (for example --nginx)._
+_Note: As of certbot v0.21, you can change the authentication method to something other than --standalone (for example --nginx)._
